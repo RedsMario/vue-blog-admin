@@ -22,8 +22,8 @@
     "update:globle": "ncu -g --concurrency 10 --timeout 80000",
     "push": "start ./push.sh",
     "deploy": "start ./deploy.sh",
-    "commit": "cz",
-    "release": "standard-version"
+    "commit": "git add . && cz-customizable",
+    "release": "standard-version --preset gitmoji-config"
   },
   "repository": {
     "type": "git",
@@ -70,7 +70,10 @@
     "body-parser": "^1.19.0",
     "chalk": "^4.1.1",
     "chokidar": "^3.5.2",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "conventional-changelog-gitmoji-config": "^1.4.7",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^7.31.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.14.0",
@@ -95,7 +98,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-customizable"
     }
   }
 }
