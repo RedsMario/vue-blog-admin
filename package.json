@@ -1,6 +1,6 @@
 {
   "name": "vue-admin-beautiful-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "author": "vue-admin-beautiful",
   "participants": [],
@@ -21,7 +21,9 @@
     "update": "ncu -u --reject sass-loader,sass&&cnpm i",
     "update:globle": "ncu -g --concurrency 10 --timeout 80000",
     "push": "start ./push.sh",
-    "deploy": "start ./deploy.sh"
+    "deploy": "start ./deploy.sh",
+    "commit": "cz",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -58,6 +60,8 @@
     "zx-templates": "^0.0.26"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-eslint": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
@@ -66,6 +70,7 @@
     "body-parser": "^1.19.0",
     "chalk": "^4.1.1",
     "chokidar": "^3.5.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.31.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.14.0",
@@ -76,6 +81,7 @@
     "prettier": "^2.3.2",
     "sass": "^1.32.13",
     "sass-loader": "^10.1.1",
+    "standard-version": "^9.5.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recess-order": "^2.4.0",
@@ -86,5 +92,10 @@
   "engines": {
     "node": ">=8.9",
     "npm": ">= 3.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
